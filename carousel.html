@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .carousel {
+      position: relative;
+      width: 300px;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .slide {
+      min-width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      font-size: 24px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .arrow.left {
+      left: 5px;
+    }
+
+    .arrow.right {
+      right: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="carousel">
+  <button class="arrow left">&#10094;</button>
+  <div class="carousel-track">
+    <img class="slide" src="diff-offer-pictures/pool-1.png">
+    <img class="slide" src="diff-offer-pictures/pool-2.png">
+    <img class="slide" src="diff-offer-pictures/pool-3.png">
+  </div>
+  <button class="arrow right">&#10095;</button>
+</div>
+
+<script>
+  const track = document.querySelector('.carousel-track');
+  const slides = document.querySelectorAll('.slide');
+  const next = document.querySelector('.arrow.right');
+  const prev = document.querySelector('.arrow.left');
+
+  let index = 0;
+
+  function update() {
+    const width = slides[0].clientWidth;
+    track.style.transform = `translateX(-${index * width}px)`;
+  }
+
+  next.addEventListener('click', () => {
+    if (index < slides.length - 1) index++;
+    update();
+  });
+
+  prev.addEventListener('click', () => {
+    if (index > 0) index--;
+    update();
+  });
+
+  window.addEventListener('resize', update);
+</script>
+
+</body>
+</html>
