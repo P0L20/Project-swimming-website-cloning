@@ -16,7 +16,6 @@
   margin-bottom: 40px;
 }
 .buttons-diff-offer button{
-  background-color: rgb(239, 242, 246);
   border: 1px solid transparent;
   height: 50px;
   padding: 0 20px;
@@ -70,4 +69,14 @@
 }
 .fa-map-pin {
   color: rgb(161, 13, 13);
+}
+.button {
+  transition: background-color 0.3s ease-in;
+  background-color: rgb(239, 242, 246);
+}
+.make-blue {
+  background-color: rgb(0, 178, 255);
+}
+.transition {
+  transition: 1s ease;
 }

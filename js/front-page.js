@@ -187,14 +187,20 @@ document.querySelectorAll('.js-button')
   .forEach(button => {
     button.addEventListener('click', (event) => {
       const option = event.currentTarget.dataset.option;
+      console.log(button)
+      document.querySelectorAll('.js-button')
+        .forEach(button => {
+          button.classList.remove('make-blue');
+        })
+      document.querySelector(`.${option}`)
+        .classList.add('make-blue');
         
-
       let renderHTML = '';
 
-      diffOfferArray.forEach((offer) => {
-        const key = Object.keys(offer)[0];
-        if(key === option) {
-          offer[key].forEach((key) => {
+      diffOfferArray.forEach(offer => {
+        const category = Object.keys(offer)[0];
+        if(category === option) {
+          offer[category].forEach(key => {
             document.querySelector('.js-discover-button')
               .innerHTML = `Discover ${key.discover} near me`
             renderHTML += renderOffer(key);
@@ -208,8 +214,8 @@ document.querySelectorAll('.js-button')
 
 function renderOffer(option) {
   return `
-  <div class="pool-container">
-      <img src="${option.img}" alt="pool">
+  <div class="pool-container transition">
+      <img src="${option.img}"x>
       <p class="name-pool">${option.name}</p>
       <p class="place">
         <i class="fa-solid fa-map-pin"></i>
@@ -222,7 +228,7 @@ function renderOffer(option) {
         <i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star"></i>
-        ${option.star}
+        (${option.star})
       </p>
       <p class="price">$${option.price}/hr</p>
     </div>
