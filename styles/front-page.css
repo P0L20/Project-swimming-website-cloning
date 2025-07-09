@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
 body {
-  font-family: Arial;
+  font-family: 'Nunito', sans-serif;
   height: 3000px;
   padding-top: 80px;
 }
@@ -80,7 +82,7 @@ button {
   color: gray;
 }
 .upper-section {
-  background: linear-gradient(to bottom, #cce7f1, #ffffff);
+  background: linear-gradient(to top, #ffffff, #cce7f1, #ffffff);
   height: 350px;
   padding-top: 20px;
 }
@@ -241,13 +243,78 @@ button {
   pointer-events: none;
   border-radius: 50px;
 }
-.image-container p {
+.image-container div {
   position: absolute;
   left: 30px;
   bottom: 25px;
-
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.image-container p {
   color: white;
   font-size: 25px;
   font-weight: 900;
   z-index: 1;
+}
+
+
+
+.guide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 60px;
+}
+.guide-text-1{
+  font-weight: 900;
+  font-size: 40px;
+}
+.guide-text-2 {
+  color: gray;
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+.step {
+  display: flex;
+  margin-bottom: 80px;
+}
+.step-pic-1 {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-left: 100px;
+  transform: rotate(-5deg);
+}
+.step-pic {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 100px;
+  transform: rotate(3deg);
+}
+.step .left-step {
+  width: 400px;
+}
+.step-1 {
+  color: rgb(34, 34, 34);
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: -0.32px;
+}
+.text-1 {
+  color: rgb(73, 72, 72);
+  font-size: 28px;
+}
+.text-2 {
+  color: rgb(107, 106, 106);
+  font-size: 20px;
+}
+.guide {
+  background: linear-gradient(white, #b4d3ff);
 }
