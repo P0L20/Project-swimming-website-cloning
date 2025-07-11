@@ -1,3 +1,11 @@
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('.header');
+  if(window.scrollY > 10) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
 
 const reviews = [{
   star: 5,
@@ -187,7 +195,6 @@ document.querySelectorAll('.js-button')
   .forEach(button => {
     button.addEventListener('click', (event) => {
       const option = event.currentTarget.dataset.option;
-      console.log(button)
       document.querySelectorAll('.js-button')
         .forEach(button => {
           button.classList.remove('make-blue');
