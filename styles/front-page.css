@@ -30,8 +30,11 @@ p {
   left: 0;
   right: 0;
   height: 70px;
-
-  transition: background-color .5s ease;
+  
+  transition: padding 100ms linear, background-color 100ms linear, border 100ms linear;
+}
+.header-trans {
+  padding: 0 50px;
 }
 
 .header.scrolled {
@@ -55,7 +58,7 @@ p {
   align-items: center;
   position: absolute;
   top: -450px;
-  left: 400px;
+  left: 350px;
 }
 .text-offer {
   color: white;
@@ -149,12 +152,18 @@ button {
   margin: 0;
 }
 .right-section {
-  width: 320px;
-  margin-left: 580px;
+  display: flex;
+  justify-content: flex-end;
+}
+.right-section-flex {
+  display: flex;
+  justify-content: flex-end;
 }
 .fPool,
 .bHost,
-.sign-up {
+.sign-up,
+.scrolled-hosts,
+.scrolled-sign-up {
   background-color: rgb(0, 178, 255);
   color: white;
   width: 150px;
@@ -168,15 +177,21 @@ button {
 }
 .bHost {
   background-color: transparent;
-  border: 1px solid gray;
-  color: gray;
+  border: 2px solid white;
+  color: white;
 }
 .sign-up-container {
   position: relative;
 }
 .sign-up {
   background-color: transparent;
-  border: 1px solid gray;
+  border: 2px solid white;
+  color: white;
+}
+.scrolled-hosts,
+.scrolled-sign-up {
+  background-color: transparent;
+  border: 2px solid gray;
   color: gray;
 }
 .upper-section {

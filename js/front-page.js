@@ -1,9 +1,17 @@
 window.addEventListener('scroll', () => {
   const header = document.querySelector('.header');
-  if(window.scrollY > 10) {
+  const hosts = document.querySelector('.bHost');
+  const signUp = document.querySelector('.sign-up');
+  if(window.scrollY > 50) {
     header.classList.add('scrolled');
+    hosts.classList.add('scrolled-hosts');
+    signUp.classList.add('scrolled-sign-up');
+    header.classList.remove('header-trans');
   } else {
     header.classList.remove('scrolled');
+    hosts.classList.remove('scrolled-hosts');
+    signUp.classList.remove('scrolled-sign-up');
+    header.classList.add('header-trans');
   }
 });
 
