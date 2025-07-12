@@ -15,6 +15,98 @@ window.addEventListener('scroll', () => {
   }
 });
 
+//for searching offer (I want to...)
+
+const want = document.querySelector('.mid-search-left');
+const searchWant = document.querySelector('.search-want');
+let searchWantChoice = true;
+
+want.addEventListener('click', () => {
+  if (searchWantChoice) {
+  searchWant.classList.add('opacity-search-want')
+  } else {
+  searchWant.classList.remove('opacity-search-want')
+  }
+  searchWantChoice = !searchWantChoice;
+})
+
+//for interactivity of searching diff offer 
+
+const offerWantArray = [{
+  pools: {
+    find: 'pool',
+    backgroundColor: 'rgb(0, 178, 255)',
+    iWant: 'Pools',
+    background: `<video autoplay loop muted playsinline class="video">
+          <source src="mobile-pool.webm" type="video/webm" >
+          <source src="mobile-pool.webm" type="video/mp4" media="(max-width: 768px)">
+          <source src="mobile-pool.webm" type="video/mp4">
+          Your browser doesn't support HTML5 video.
+        </video>`
+  }
+}, {
+  tennis: {
+    find: 'court',
+    backgroundColor: 'rgb(0, 175, 84)',
+    iWant: 'Tennis Court',
+    background: 'pictures/tennis-pic.jpg'
+  }
+}, {
+  pickleball: {
+    find: 'court',
+    backgroundColor: 'rgb(0, 83, 142)',
+    iWant: 'Pickleball Court',
+    background: 'pictures/pickleball-pic.jpg'
+  }
+}, {
+  hoops: {
+    find: 'court',
+    backgroundColor: 'rgb(248, 104, 72)',
+    iWant: 'Hoops',
+    background: 'pictures/hoops-pic.jpg'
+  }
+}, {
+  homes: {
+    find: 'House',
+    backgroundColor: 'rgb(230, 50, 126)',
+    iWant: 'Entire Homes',
+    background: 'pictures/homes-pic.jpg'
+  }
+}, {
+  pet: {
+    find: 'Pet Parks',
+    backgroundColor: 'rgb(0, 175, 84)',
+    iWant: 'Pet parks',
+    background: 'pictures/pets-pic.jpg'
+  }
+}];
+
+const styleBgShowcase = document.querySelector('.showcase-container');
+const findX = document.querySelector('.fPool');
+const iWant = document.querySelector('.data-label');
+const searchIcon = document.querySelector('.search-button');
+const containerBackground = document.querySelector('.video-container');
+const offerWant = document.querySelectorAll('.offer-want');
+
+offerWant.forEach((offer) => {
+    offer.addEventListener('click', (event) => {
+        const dataWant = event.currentTarget.dataset.want;
+
+        offerWantArray.forEach((offerWant) => {
+        const offers = Object.keys(offerWant)[0];
+        if(dataWant === offers) {
+          styleBgShowcase.style.backgroundColor = `${offerWant[offers].backgroundColor}`;
+          findX.innerHTML = `Find a ${offerWant[offers].find}`;
+          findX.style.backgroundColor = `${offerWant[offers].backgroundColor}`
+          iWant.innerHTML = `${offerWant[offers].iWant}`;
+          searchIcon.style.backgroundColor = `${offerWant[offers].backgroundColor}`;
+          containerBackground.innerHTML =  `<img class="video" src="${offerWant[offers].background}">`
+          }
+        });
+    })
+})
+
+
 const reviews = [{
   star: 5,
   name: 'Samantha from Wheat Ridge, CO',
@@ -202,6 +294,7 @@ const diffOfferArray = [{
 document.querySelectorAll('.js-button')
   .forEach(button => {
     button.addEventListener('click', (event) => {
+      console.log(event);
       const option = event.currentTarget.dataset.option;
       document.querySelectorAll('.js-button')
         .forEach(button => {
