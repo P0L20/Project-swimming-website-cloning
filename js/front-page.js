@@ -37,7 +37,7 @@ const offerWantArray = [{
     find: 'pool',
     backgroundColor: 'rgb(0, 178, 255)',
     iWant: 'Pools',
-    background: `<video autoplay loop muted playsinline class="video">
+    videoBackground: `<video autoplay loop muted playsinline class="video">
           <source src="mobile-pool.webm" type="video/webm" >
           <source src="mobile-pool.webm" type="video/mp4" media="(max-width: 768px)">
           <source src="mobile-pool.webm" type="video/mp4">
@@ -100,7 +100,12 @@ offerWant.forEach((offer) => {
           findX.style.backgroundColor = `${offerWant[offers].backgroundColor}`
           iWant.innerHTML = `${offerWant[offers].iWant}`;
           searchIcon.style.backgroundColor = `${offerWant[offers].backgroundColor}`;
-          containerBackground.innerHTML =  `<img class="video" src="${offerWant[offers].background}">`
+          if(offerWant[offers].find === 'pool') {
+            containerBackground.innerHTML = offerWant[offers].videoBackground;
+          } else {
+            containerBackground.innerHTML =  `<img class="video" src="${offerWant[offers].background}">`;
+          }
+
           }
         });
     })

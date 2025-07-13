@@ -15,6 +15,9 @@ p {
   margin: 0;
   color: rgb(34, 34, 34);
 }
+html {
+  scroll-behavior: smooth;
+}
 
 .header {
   background-color: transparent;
@@ -101,6 +104,7 @@ p {
   justify-content: space-between;
   opacity: 0;
   transition: opacity .15s ease;
+  pointer-events: none;
 }
 .opacity-search-want {
   opacity: 1;
@@ -164,6 +168,7 @@ p {
   text-decoration: underline;
   font-size: 20px;
   margin-top: 70px;
+  cursor: pointer;
 }
 /*showcase*/
 .showcase-container {
@@ -354,6 +359,8 @@ button {
   line-height: 120%;
   letter-spacing: -0.48px;
   margin-bottom: 4px;
+  margin-top: 20px;
+  cursor: pointer;
 }
 .container-offer {
   display: flex;
@@ -405,7 +412,7 @@ button {
 }
 .pet-right-container {
   width: 600px;
-  height: 300px;
+  height: 260px;
   background-image: url('../pictures/dog.jpg');
   object-fit: cover;
   background-size: cover;
@@ -541,4 +548,65 @@ button {
 }
 .guide {
   background: linear-gradient(white, #b4d3ff);
+}
+.find-pools {
+  border-radius: 100px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  padding: 0 20px;
+  background: rgb(0, 178, 255);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+#guide {
+    scroll-margin-top: 100px;
+    scroll-behavior: smooth;
+}
+.dl-app {
+  width: 90%;
+  height: 350px;
+  margin: 0 auto;
+  background-color: rgb(0, 178, 255);
+  margin-top: 20px;
+  border-radius: 44px;
+  padding: 24px 60px;
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+}
+.dl-app:hover {
+  opacity: .8;
+}
+.dl-text {
+  color: white;
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 120%;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+.text-child {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 100%;
+  color: rgb(255, 255, 255);
+  margin-bottom: 20px;
+}
+.img-cellphone {
+  width: 100%;
+  height: 325px;
+  object-fit: contain;
+  margin-bottom: -24px;
+}
+.qr-code {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-left: 20px;
+  border-radius: 10px;
+}
+.right-picture {
+  display: flex;
+  align-items: center;
 }
