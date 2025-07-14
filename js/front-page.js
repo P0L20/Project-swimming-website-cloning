@@ -1,5 +1,5 @@
 import { signUp } from "./sign-up.js";
-import { diffOfferArray, personOffers, reviews, offerWantArray } from "./arrays-data.js";
+import { diffOfferArray, personOffers, reviewsGuest, reviewsHosts, offerWantArray } from "./arrays-data.js";
 
 window.addEventListener('scroll', () => {
   const header = document.querySelector('.header');
@@ -41,6 +41,7 @@ const findX = document.querySelector('.fPool');
 const iWant = document.querySelector('.data-label');
 const searchIcon = document.querySelector('.search-button');
 const containerBackground = document.querySelector('.video-container');
+const rent = document.querySelector('.text-offer');
 const offerWant = document.querySelectorAll('.offer-want');
 
 offerWant.forEach((offer) => {
@@ -55,6 +56,7 @@ offerWant.forEach((offer) => {
           findX.style.backgroundColor = `${offerWant[offers].backgroundColor}`
           iWant.innerHTML = `${offerWant[offers].iWant}`;
           searchIcon.style.backgroundColor = `${offerWant[offers].backgroundColor}`;
+          rent.innerHTML = `Rent ${offerWant[offers].rent}, by the hour`;
           if(offerWant[offers].find === 'pool') {
             containerBackground.innerHTML = offerWant[offers].videoBackground;
           } else {
@@ -67,20 +69,47 @@ offerWant.forEach((offer) => {
 })
 
 //reviews
-let reviewHTML = '';
+const guestButton = document.querySelector('.guest-button');
+const hostsButton = document.querySelector('.hosts-button');
+const choiceType = document.querySelectorAll('.choice-button');
 
-reviews.forEach((review) => {
-  reviewHTML += 
-      `<div class="review">
-        <div class="star">⭐⭐⭐⭐⭐</div>
-        <p class="name">${review.name}</p>
-        <p class="comment">${review.comment}</p>
-      </div>`
-});
+choiceType.forEach((choice) => {
+  choice.addEventListener('click', (event) => {
+    const choiceData = event.currentTarget.dataset.choiceType;
+    if(choiceData === 'reviewsGuests') {
+      let choice = reviewsGuest;
+      reviews(choice);
+      guestButton.classList.add('guest-button');
+      guestButton.classList.remove('hosts-button');
+      hostsButton.classList.add('hosts-button');
+    } else {
+      let choice = reviewsHosts;
+      reviews(choice);
+      hostsButton.classList.add('guest-button');
+      hostsButton.classList.remove('hosts-button');
+      guestButton.classList.add('hosts-button');
+    }
+  })
+})
+reviews(reviewsGuest);
 
-document.querySelector('.js-review-container')
-  .innerHTML = reviewHTML;
-  
+function reviews(reviewType) {
+  let reviewHTML = '';
+
+      reviewType.forEach((review) => {
+        reviewHTML += 
+            `<div class="review">
+              <div class="star">⭐⭐⭐⭐⭐</div>
+              <p class="name">${review.name}</p>
+              <p class="comment">${review.comment}</p>
+            </div>`
+      });
+
+      document.querySelector('.js-review-container')
+        .innerHTML = reviewHTML;
+}
+
+          
 //person offers (family swims...)
 let personOffersHTML = ''
 

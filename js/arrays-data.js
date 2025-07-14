@@ -4,6 +4,7 @@ export const offerWantArray = [{
     find: 'pool',
     backgroundColor: 'rgb(0, 178, 255)',
     iWant: 'Pools',
+    rent: 'private Pools',
     videoBackground: `<video autoplay loop muted playsinline class="video">
           <source src="mobile-pool.webm" type="video/webm" >
           <source src="mobile-pool.webm" type="video/mp4" media="(max-width: 768px)">
@@ -16,6 +17,7 @@ export const offerWantArray = [{
     find: 'court',
     backgroundColor: 'rgb(0, 175, 84)',
     iWant: 'Tennis Court',
+    rent: 'courts',
     background: 'pictures/tennis-pic.jpg'
   }
 }, {
@@ -23,6 +25,7 @@ export const offerWantArray = [{
     find: 'court',
     backgroundColor: 'rgb(0, 83, 142)',
     iWant: 'Pickleball Court',
+    rent: 'courts',
     background: 'pictures/pickleball-pic.jpg'
   }
 }, {
@@ -30,6 +33,7 @@ export const offerWantArray = [{
     find: 'court',
     backgroundColor: 'rgb(248, 104, 72)',
     iWant: 'Hoops',
+    rent: 'hoops',
     background: 'pictures/hoops-pic.jpg'
   }
 }, {
@@ -37,6 +41,7 @@ export const offerWantArray = [{
     find: 'House',
     backgroundColor: 'rgb(230, 50, 126)',
     iWant: 'Entire Homes',
+    rent: 'private homes',
     background: 'pictures/homes-pic.jpg'
   }
 }, {
@@ -44,11 +49,13 @@ export const offerWantArray = [{
     find: 'Pet Parks',
     backgroundColor: 'rgb(0, 175, 84)',
     iWant: 'Pet parks',
+    rent: 'Pet friendly pools',
     background: 'pictures/pets-pic.jpg'
   }
 }];
 
-export const reviews = [{
+//reviews
+export const reviewsGuest = [{
   star: 5,
   name: 'Samantha from Wheat Ridge, CO',
   comment: 'Awesome app for finding private swimmming pools. Super easy and fun!'
@@ -60,6 +67,21 @@ export const reviews = [{
   star: 5,
   name: 'Cassie from Houston, TX',
   comment: `Used it for my daughter's birthday—great host, big pool, trampoline, privacy. Will book again!`
+}];
+
+//reviews-hosts 
+export const reviewsHosts = [{
+  star: 5,
+  name: 'Jim B.',
+  comment: 'Swimply now pays our mortgage and even covered a kitchen remodel'
+}, {
+  star: 5,
+  name: 'Armando V.',
+  comment: '40+ bookings so far; the income is great'
+}, {
+  star: 5,
+  name: 'Sonia P.',
+  comment: `Swimply guarantee erased liability worries; it is been smooth side hustle`
 }];
 
 export const personOffers = [{
