@@ -1,5 +1,4 @@
 //different offers array
-
 export const offerWantArray = [{
   pools: {
     find: 'pool',
