@@ -98,7 +98,7 @@ function reviews(reviewType) {
 
       reviewType.forEach((review) => {
         reviewHTML += 
-            `<div class="review">
+            `<div class="review carousel-slide">
               <div class="star">⭐⭐⭐⭐⭐</div>
               <p class="name">${review.name}</p>
               <p class="comment">${review.comment}</p>
@@ -107,6 +107,41 @@ function reviews(reviewType) {
 
       document.querySelector('.js-review-container')
         .innerHTML = reviewHTML;
+
+      carouselSlider();
+}
+
+function carouselSlider () {
+  const track = document.querySelector('.carousel-track'); //container-pictures
+      const slides = document.querySelectorAll('.carousel-slide'); //picture
+      const prevBtn = document.querySelector('.carousel-button.prev'); //left-button
+      const nextBtn = document.querySelector('.carousel-button.next'); //right-button
+
+      let currentSlide = 0; //initialize slide-count
+
+      function updateCarousel() {
+        const slideWidth = slides[0].clientWidth * 3;
+        track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+      }
+
+      nextBtn.addEventListener('click', () => {
+        if (currentSlide < slides.length - 1) {
+          currentSlide++;
+          updateCarousel();
+          nextBtn.style.display = 'none';
+          prevBtn.style.display = 'block';
+        }
+      });
+
+      prevBtn.addEventListener('click', () => {
+        if (currentSlide > 0) {
+          currentSlide--;
+          updateCarousel();
+          nextBtn.style.display = 'block';
+          prevBtn.style.display = 'none';
+        }
+      });
+
 }
 
           

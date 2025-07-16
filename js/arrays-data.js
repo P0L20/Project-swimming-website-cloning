@@ -67,6 +67,18 @@ export const reviewsGuest = [{
   star: 5,
   name: 'Cassie from Houston, TX',
   comment: `Used it for my daughter's birthday—great host, big pool, trampoline, privacy. Will book again!`
+}, {
+  star: 5,
+  name: 'A. Marie',
+  comment: 'Love Swimply! I get pool time without the maintenance cost. A lifesaver in hot Vegas summers.'
+}, {
+  star: 5,
+  name: 'Michelle',
+  comment: 'Booked a heated pool in December just 3 miles away. Swimming the next day—amazing!'
+}, {
+  star: 5,
+  name: 'Usher',
+  comment: `Just what I needed! Great app design, reliable bookings, and awesome pool experiences.`
 }];
 
 //reviews-hosts 
@@ -82,6 +94,18 @@ export const reviewsHosts = [{
   star: 5,
   name: 'Sonia P.',
   comment: `Swimply guarantee erased liability worries; it is been smooth side hustle`
+}, {
+  star: 5,
+  name: 'Fabiola F.',
+  comment: 'It pays for pool upkeep and bills—next we will list our home theater!'
+}, {
+  star: 5,
+  name: 'Kyle W.',
+  comment: 'We rarely swim ourselves, so renting the pool is a perfect win-win.'
+}, {
+  star: 5,
+  name: 'Stuart from Portland, OR',
+  comment: `Most pool owners will tell you how much their pool costs them per month. Swimply pool owners will tell you how much their pool earns them per month!`
 }];
 
 export const personOffers = [{
