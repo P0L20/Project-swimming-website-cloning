@@ -697,7 +697,7 @@ button {
 .carousel-container {
   position: relative;
 }
-.carousel {
+.carousel{
   position: relative;
   width: 90%;
   overflow: hidden;
@@ -752,4 +752,3 @@ button {
   position: absolute;
   right: 10px;
 }
-

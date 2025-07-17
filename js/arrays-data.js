@@ -134,6 +134,47 @@ export const personOffers = [{
   icon: '📸'
 }];
 
+//different offer nav bar
+export const navBars = [{
+  pools: {
+    dataName: 'pools',
+    icon: 'fa-person-swimming',
+    name: 'Pools',
+    classBlue: 'make-blue'
+  }
+}, {
+  tennis: {
+    dataName: 'tennis',
+    icon: 'fa-table-tennis-paddle-ball',
+    name: 'Tennis courts'
+  }
+}, {
+  pickleball: {
+    dataName: 'pickleball',
+    icon: 'fa-bowling-ball',
+    name: 'Pickleball courts'
+  }
+}, {
+  hoops: {
+    dataName: 'hoops',
+    icon: 'fa-basketball',
+    name: 'Hoops'
+  }
+}, {
+  indoor: {
+    dataName: 'indoor',
+    icon: 'fa-house',
+    name: 'Indoor havens'
+  }
+}, {
+  backyards: {
+    dataName: 'backyards',
+    icon: 'fa-tree-city',
+    name: 'Backyards'
+  }
+}]
+
+//different offer
 export const diffOfferArray = [{
   pools: [{
     img: 'diff-offer-pictures/pool-1.png',
@@ -149,6 +190,20 @@ export const diffOfferArray = [{
     place: 'Japan',
     star: 457,
     price: 80
+  }, {
+    img: 'diff-offer-pictures/pool-3.png',
+    name: 'Luxurious lake',
+    discover: 'pools',
+    place: 'Canada',
+    star: 600,
+    price: 90
+  },{
+    name: 'Siola River',
+    img: 'diff-offer-pictures/pool-4.png',
+    discover: 'pools',
+    place: 'Japan',
+    star: 407,
+    price: 60
   }]
 }, {
   tennis: [{
@@ -164,6 +219,20 @@ export const diffOfferArray = [{
     discover: 'court',
     place: 'Los Angeles',
     star: 8,
+    price: 25
+  }, {
+    img: 'diff-offer-pictures/tennis-3.jpg',
+    name: 'Tennis Court. Diola',
+    discover: 'court',
+    place: 'Vegas',
+    star: 27,
+    price: 27
+  },{
+    img: 'diff-offer-pictures/tennis-4.webp',
+    name: 'Tennis Rain',
+    discover: 'court',
+    place: 'Korea',
+    star: 80,
     price: 25
   }]
 }, {
@@ -181,6 +250,20 @@ export const diffOfferArray = [{
     place: 'Los Angeles',
     star: 18,
     price: 38
+  }, {
+    img: 'diff-offer-pictures/pickleball-3.webp',
+    name: 'Pickleball Court',
+    discover: 'court',
+    place: 'San Diego',
+    star: 14,
+    price: 35
+  }, {
+    img: 'diff-offer-pictures/pickleball-4.jpeg',
+    name: 'Gorgeous Pickleball Court in Los Angeles',
+    discover: 'court',
+    place: 'Los Angeles',
+    star: 18,
+    price: 38
   }]
 }, {
   hoops: [{
@@ -192,6 +275,20 @@ export const diffOfferArray = [{
     price: 80
   }, {
     img: 'diff-offer-pictures/bball-2.png',
+    name: 'Ballers Paradise!',
+    discover: 'court',
+    place: 'Vaughan',
+    star: 1,
+    price: 50
+  }, {
+    img: 'diff-offer-pictures/bball-3.jpg',
+    name: 'Beutifully Surfaced Basketball Half-Court',
+    discover: 'court',
+    place: 'Los Angeles',
+    star: 1,
+    price: 80
+  }, {
+    img: 'diff-offer-pictures/bball-4.avif',
     name: 'Ballers Paradise!',
     discover: 'court',
     place: 'Vaughan',
@@ -213,6 +310,20 @@ export const diffOfferArray = [{
     place: 'Los Angeles',
     star: 4,
     price: 1299
+  }, {
+    img: 'diff-offer-pictures/indoor-3.jpg',
+    name: 'Ranch-style La Designer Retreat',
+    discover: 'home',
+    place: 'Los Angeles',
+    star: 1,
+    price: 250
+  }, {
+    img: 'diff-offer-pictures/indoor-4.jpg',
+    name: 'The Temple Hill One',
+    discover: 'home',
+    place: 'Los Angeles',
+    star: 4,
+    price: 1299
   }]
 }, {
   backyards: [{
@@ -224,6 +335,20 @@ export const diffOfferArray = [{
     price: 12000
   }, {
     img: 'diff-offer-pictures/backyard-2.png',
+    name: 'Diola Hill',
+    discover: 'backyards',
+    place: 'Los Angeles',
+    star: 189,
+    price: 30000
+  }, {
+    img: 'diff-offer-pictures/backyard-3.jpg',
+    name: 'Luxurious yard',
+    discover: 'backyards',
+    place: 'San Diego',
+    star: 4,
+    price: 12000
+  }, {
+    img: 'diff-offer-pictures/backyard-4.jpg',
     name: 'Diola Hill',
     discover: 'backyards',
     place: 'Los Angeles',

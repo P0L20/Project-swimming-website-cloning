@@ -36,11 +36,29 @@
   border-radius: 50px;
   cursor: pointer;
 }
-.picture-offer {
+.diff-section-carousel {
+  position: relative;
+  width: 90%;
+}
+.diff-section-carousel button {
+  position: absolute;
+}
+.diff-section-carousel button:first-of-type {
+  right: -50px;
+  top: 50%;
+}
+.diff-section-carousel button:nth-child(3) {
+  left: -50px;
+  top: 50%;
+}
+.picture-offer{
   display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  transition: transform 0.5s ease;
 }
 .pool-container {
-  margin-right: 100px;
+  margin-right: 30px;
 }
 .pool-container img {
   width: 400px;

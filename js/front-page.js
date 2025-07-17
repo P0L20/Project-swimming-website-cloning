@@ -1,5 +1,5 @@
 import { signUp } from "./sign-up.js";
-import { diffOfferArray, personOffers, reviewsGuest, reviewsHosts, offerWantArray } from "./arrays-data.js";
+import { diffOfferArray, personOffers, reviewsGuest, reviewsHosts, offerWantArray, navBars } from "./arrays-data.js";
 
 window.addEventListener('scroll', () => {
   const header = document.querySelector('.header');
@@ -108,19 +108,22 @@ function reviews(reviewType) {
       document.querySelector('.js-review-container')
         .innerHTML = reviewHTML;
 
-      carouselSlider();
-}
-
-function carouselSlider () {
-  const track = document.querySelector('.carousel-track'); //container-pictures
+      
+      const track = document.querySelector('.carousel-track'); //container-pictures
       const slides = document.querySelectorAll('.carousel-slide'); //picture
+      console.log(slides);
       const prevBtn = document.querySelector('.carousel-button.prev'); //left-button
       const nextBtn = document.querySelector('.carousel-button.next'); //right-button
+      const minus = 0;
 
+      carouselSlider(track, slides, prevBtn, nextBtn, minus);
+}
+
+function carouselSlider (track, slides, prevBtn, nextBtn, minus) {
       let currentSlide = 0; //initialize slide-count
 
       function updateCarousel() {
-        const slideWidth = slides[0].clientWidth * 3;
+        const slideWidth = (slides[0].clientWidth * 3) - minus;
         track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
       }
 
@@ -162,7 +165,35 @@ personOffers.forEach((personOffer) => {
 document.querySelector('.js-person-offer')
   .innerHTML = personOffersHTML;
 
+//navbar for different offers 
+const nav = document.querySelector('.buttons-diff-offer');
+let navHTML = ''
+
+navBars.forEach(values => {
+  const offer = Object.keys(values)[0];
+  const printOffer = values[offer];
+   
+  navHTML += `<button class="js-button button ${printOffer.dataName} ${printOffer.classBlue}" data-option="${printOffer.dataName}">
+                <i class="fa-solid ${printOffer.icon}"></i>
+                ${printOffer.name}
+              </button>`;
+
+});
+
+nav.innerHTML = navHTML;
+
 //different offers
+diferentOffer();
+
+function diferentOffer () {
+      const track = document.querySelector('.picture-offer'); //container-all-offers
+      const slides = document.querySelectorAll('.pool-container'); //offers
+      const prevBtn = document.querySelector('.button-prev-offer'); //left-button
+      const nextBtn = document.querySelector('.button-next-offer'); //right-button
+      const minus = 500;
+      
+      carouselSlider(track, slides, prevBtn, nextBtn, minus);
+
 document.querySelectorAll('.js-button')
   .forEach(button => {
     button.addEventListener('click', (event) => {
@@ -175,6 +206,7 @@ document.querySelectorAll('.js-button')
         .classList.add('make-blue');
         
       let renderHTML = '';
+      
 
       diffOfferArray.forEach(offer => {
         const category = Object.keys(offer)[0];
@@ -188,8 +220,15 @@ document.querySelectorAll('.js-button')
       });
         document.querySelector('.picture-offer')
           .innerHTML = renderHTML;
-    });
+
+      const newSlides = document.querySelectorAll('.pool-container');
+      const prevBtn = document.querySelector('.button-prev-offer');
+      const nextBtn = document.querySelector('.button-next-offer');
+
+      carouselSlider(track, newSlides, prevBtn, nextBtn, minus);
+    }); 
   });
+};
 
 function renderOffer(option) {
   return `
@@ -210,6 +249,6 @@ function renderOffer(option) {
         (${option.star})
       </p>
       <p class="price">$${option.price}/hr</p>
-    </div>
+    </div>    
   `
 }
