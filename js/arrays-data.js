@@ -221,15 +221,15 @@ export const diffOfferArray = [{
     star: 8,
     price: 25
   }, {
-    img: 'diff-offer-pictures/tennis-3.jpg',
-    name: 'Tennis Court. Diola',
+    img: 'diff-offer-pictures/tennis-3.png',
+    name: 'Center Court. Diola',
     discover: 'court',
     place: 'Vegas',
     star: 27,
     price: 27
   },{
     img: 'diff-offer-pictures/tennis-4.webp',
-    name: 'Tennis Rain',
+    name: 'The Court Royale',
     discover: 'court',
     place: 'Korea',
     star: 80,
@@ -251,15 +251,15 @@ export const diffOfferArray = [{
     star: 18,
     price: 38
   }, {
-    img: 'diff-offer-pictures/pickleball-3.webp',
-    name: 'Pickleball Court',
+    img: 'diff-offer-pictures/pickleball-3.png',
+    name: 'Paddle Grounds',
     discover: 'court',
     place: 'San Diego',
     star: 14,
     price: 35
   }, {
     img: 'diff-offer-pictures/pickleball-4.jpeg',
-    name: 'Gorgeous Pickleball Court in Los Angeles',
+    name: 'The Net Zone',
     discover: 'court',
     place: 'Los Angeles',
     star: 18,
@@ -278,34 +278,34 @@ export const diffOfferArray = [{
     name: 'Ballers Paradise!',
     discover: 'court',
     place: 'Vaughan',
-    star: 1,
+    star: 3,
     price: 50
   }, {
-    img: 'diff-offer-pictures/bball-3.jpg',
-    name: 'Beutifully Surfaced Basketball Half-Court',
+    img: 'diff-offer-pictures/bball-3.png',
+    name: 'The Slam Zone',
     discover: 'court',
     place: 'Los Angeles',
-    star: 1,
-    price: 80
+    star: 2,
+    price: 20
   }, {
     img: 'diff-offer-pictures/bball-4.avif',
-    name: 'Ballers Paradise!',
+    name: 'The Crossover Grounds!',
     discover: 'court',
     place: 'Vaughan',
-    star: 1,
-    price: 50
+    star: 5,
+    price: 40
   }]
 }, {
   indoor: [{
     img: 'diff-offer-pictures/indoor-1.png',
-    name: 'Ranch-style La Designer Retreat',
+    name: 'Zenith Room',
     discover: 'home',
     place: 'Los Angeles',
     star: 1,
     price: 250
   }, {
     img: 'diff-offer-pictures/indoor-2.png',
-    name: 'The Temple Hill One',
+    name: 'The Inner Light',
     discover: 'home',
     place: 'Los Angeles',
     star: 4,
@@ -328,14 +328,14 @@ export const diffOfferArray = [{
 }, {
   backyards: [{
     img: 'diff-offer-pictures/backyard-1.png',
-    name: 'Luxurious yard',
+    name: 'Havenhaus',
     discover: 'backyards',
     place: 'San Diego',
     star: 4,
     price: 12000
   }, {
     img: 'diff-offer-pictures/backyard-2.png',
-    name: 'Diola Hill',
+    name: 'Tranquil Loft',
     discover: 'backyards',
     place: 'Los Angeles',
     star: 189,

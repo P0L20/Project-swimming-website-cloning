@@ -23,6 +23,10 @@
   margin-right: 10px;
   cursor: pointer;
   margin-bottom: 30px;
+  transition: box-shadow .5s ease;
+}
+.buttons-diff-offer button:hover {
+  box-shadow: 2px 2px 10px rgba(128, 128, 128, .5);
 }
 .discover-button {
   background-color: rgb(0, 178, 255);
@@ -59,6 +63,11 @@
 }
 .pool-container {
   margin-right: 30px;
+  transition: opacity .4s;
+  cursor: pointer;
+}
+.pool-container:hover {
+  opacity: .8;
 }
 .pool-container img {
   width: 400px;
@@ -95,6 +104,17 @@
 .make-blue {
   background-color: rgb(0, 178, 255);
 }
-.transition {
-  transition: 1s ease;
+.button-next-offer,
+.button-prev-offer {
+  background-color: rgb(0, 178, 255) ;
+  border: none;
+  padding: 0 20px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: box-shadow .3s;
+} 
+.button-next-offer:hover,
+.button-prev-offer:hover {
+  box-shadow: 2px 2px 10px rgb(45, 106, 133) ;
 }

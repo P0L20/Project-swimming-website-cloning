@@ -111,7 +111,6 @@ function reviews(reviewType) {
       
       const track = document.querySelector('.carousel-track'); //container-pictures
       const slides = document.querySelectorAll('.carousel-slide'); //picture
-      console.log(slides);
       const prevBtn = document.querySelector('.carousel-button.prev'); //left-button
       const nextBtn = document.querySelector('.carousel-button.next'); //right-button
       const minus = 0;
@@ -183,7 +182,24 @@ navBars.forEach(values => {
 nav.innerHTML = navHTML;
 
 //different offers
-diferentOffer();
+diferentOffer();const offer = diffOfferArray[0].pools;
+
+let renderHTML = '';
+offer.forEach(item => {
+  renderHTML += renderOffer(item);
+});
+
+document.querySelector('.picture-offer').innerHTML = renderHTML;
+
+// Reinitialize carousel after rendering
+const track = document.querySelector('.picture-offer');
+const slides = document.querySelectorAll('.pool-container');
+const prevBtn = document.querySelector('.button-prev-offer');
+const nextBtn = document.querySelector('.button-next-offer');
+const minus = 500;
+
+carouselSlider(track, slides, prevBtn, nextBtn, minus);
+
 
 function diferentOffer () {
       const track = document.querySelector('.picture-offer'); //container-all-offers
@@ -204,7 +220,7 @@ document.querySelectorAll('.js-button')
         })
       document.querySelector(`.${option}`)
         .classList.add('make-blue');
-        
+
       let renderHTML = '';
       
 
@@ -212,11 +228,12 @@ document.querySelectorAll('.js-button')
         const category = Object.keys(offer)[0];
         if(category === option) {
           offer[category].forEach(key => {
+            console.log(key);
             document.querySelector('.js-discover-button')
               .innerHTML = `Discover ${key.discover} near me`
             renderHTML += renderOffer(key);
-          })
-        }
+          });
+        };
       });
         document.querySelector('.picture-offer')
           .innerHTML = renderHTML;
@@ -229,6 +246,8 @@ document.querySelectorAll('.js-button')
     }); 
   });
 };
+
+
 
 function renderOffer(option) {
   return `
