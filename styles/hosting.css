@@ -1,0 +1,61 @@
+.pool-hosting-picture {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+.header-hosting-trans {
+  padding: 0 50px;
+}
+.offer {
+  color: white;
+  font-weight: 600;
+  font-size: 17px;
+  border: 1.6px solid white;
+  background: transparent;
+  height: 50px;
+  padding: 0 20px;
+  margin-right: 15px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all .5s;
+}
+.scrolled-offer {
+  color: #626A75;
+  font-weight: 600;
+  font-size: 17px;
+  border: 1.6px solid gray;
+  background: transparent;
+  height: 50px;
+  padding: 0 20px;
+  margin-right: 15px;
+  border-radius: 100px;
+}
+.pool-offer {
+  border: 1.6px solid rgb(0, 178, 255);
+  background-color: rgb(0, 178, 255);
+  color: white;
+}
+.scrolled-sign-up-hosting {
+  border: 1px solid rgb(217, 217, 217);
+  color: gray;
+}
+.pickleball-offer:hover {
+  background-color: #00538e;
+  border: 1px solid #00538e;
+  color: white;
+}
+.tennis-offer:hover {
+  background-color: #00af54;
+  border: 1px solid #00af54;
+  color: white;
+}
+.hoops-offer:hover {
+  background-color: #f86848;
+  border: 1px solid #f86848;
+  color: white;
+}
+.homes-offer:hover {
+  background-color: #002BFF;
+  border: 1px solid #002BFF;
+  color: white;
+}
