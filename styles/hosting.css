@@ -1,7 +1,49 @@
+.sign-up-hosting {
+  width: 120px;
+}
+.container-front-page {
+  position: relative;
+}
+.container-text-front {
+  display: flex;
+  flex-direction: column;
+
+  position: absolute;
+  top: 30%;
+  left: 50px;
+  z-index: 1;
+}
+.container-text-front p:nth-child(1) {
+  color: white;
+  font-weight: 900;
+  font-size: 60px;
+  line-height: 70px;
+  width: 50%;
+}
+.container-text-front p:nth-child(2) {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  width: 50%;
+  margin-top: 10px;
+}
+.get-started {
+  width: 20%;
+  height: 50px;
+  background-color: rgb(0, 178, 255);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
 .pool-hosting-picture {
   width: 100%;
   height: 600px;
   object-fit: cover;
+  filter: brightness(70%);
 }
 .header-hosting-trans {
   padding: 0 50px;
@@ -30,11 +72,6 @@
   margin-right: 15px;
   border-radius: 100px;
 }
-.pool-offer {
-  border: 1.6px solid rgb(0, 178, 255);
-  background-color: rgb(0, 178, 255);
-  color: white;
-}
 .scrolled-sign-up-hosting {
   border: 1px solid rgb(217, 217, 217);
   color: gray;
@@ -55,6 +92,38 @@
   color: white;
 }
 .homes-offer:hover {
+  background-color: #002BFF;
+  border: 1px solid #002BFF;
+  color: white;
+}
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+.image-wrapper img {
+  display: block;
+}
+.color-pool {
+  border: 1.6px solid rgb(0, 178, 255);
+  background-color: rgb(0, 178, 255);
+  color: white;
+}
+.color-pickleball {
+  background-color: #00538e;
+  border: 1px solid #00538e;
+  color: white;
+}
+.color-tennis {
+  background-color: #00af54;
+  border: 1px solid #00af54;
+  color: white;
+}
+.color-hoops {
+  background-color: #f86848;
+  border: 1px solid #f86848;
+  color: white;
+}
+.color-homes {
   background-color: #002BFF;
   border: 1px solid #002BFF;
   color: white;

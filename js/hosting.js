@@ -1,4 +1,5 @@
 import { hostingPic } from "./arrays-data-hosting.js";
+import { signUp } from "./sign-up.js";
 
 window.addEventListener('scroll', () => {
   const header = document.querySelector('.header');
@@ -21,6 +22,10 @@ window.addEventListener('scroll', () => {
   }
 });
 
+signUp();
+
+const hostingData = hostingPic;
+
 hostingPic.forEach(hosting => {
   const host = Object.keys(hosting)[0];
 })
@@ -30,11 +35,24 @@ const buttonOffers = document.querySelectorAll('.offer');
 buttonOffers.forEach(buttonOffer => {
   buttonOffer.addEventListener('click', () => {
     const dataName = buttonOffer.dataset.nameOffer;
-    renderHero(dataName);
+    renderHero(dataName, dataName);
+
+    buttonOffers.forEach(buttons => {
+      hostingData.forEach(data => {
+          const dataName = Object.keys(data)[0];
+          buttons.classList.remove(data[dataName].color);
+      })
+    })
+
+    hostingData.forEach(data => {
+      if(Object.keys(data)[0] === dataName) {
+        buttonOffer.classList.add(data[dataName].color);
+      }
+    });
   })
 });
 
-function renderHero(typePicture) {
+function renderHero(typePicture, dataName) {
   const frontPage = document.querySelector('.container-front-page');
   let heroHTML = '';
 
@@ -42,9 +60,22 @@ function renderHero(typePicture) {
     const host = Object.keys(hosting)[0];
 
     if (host === typePicture) {
-      heroHTML += `<img class="pool-hosting-picture" src="${hosting[host].img}">`;
+      heroHTML += `<div class="container-text-front">
+          <p>Earn $6,000+/mo ${hosting[host].earnText}</p>
+          <p>${hosting[host].lowerText}</p>
+          <button class="get-started">Get Started</button>
+        </div>
+        <img class="pool-hosting-picture" src="${hosting[host].img}">`;
     }
   })
   
   frontPage.innerHTML = heroHTML;
+
+  hostingData.forEach(data => {
+    if(Object.keys(data)[0] === dataName) {
+    const getStarted = document.querySelector('.get-started');
+    getStarted.style.backgroundColor = `${data[dataName].colorElements}`;
+    }
+  })
+  
 }
