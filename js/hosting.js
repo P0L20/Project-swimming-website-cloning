@@ -1,23 +1,24 @@
 import { hostingPic } from "./arrays-data-hosting.js";
 import { signUp } from "./sign-up.js";
+import { getLinkInfo } from "./front-page.js";
 
 window.addEventListener('scroll', () => {
   const header = document.querySelector('.header');
   const offers = document.querySelectorAll('.offer');
-  const signUp = document.querySelector('.sign-up');
+  const signUpElement = document.querySelector('.sign-up');
   if(window.scrollY > 50) {
     header.classList.add('scrolled');
     offers.forEach(offer => {
       offer.classList.add('scrolled-offer');
     });
-    signUp.classList.add('scrolled-sign-up-hosting');
+    signUpElement.classList.add('scrolled-sign-up-hosting');
     header.classList.remove('header-hosting-trans');
   } else {
     header.classList.remove('scrolled');
     offers.forEach(offer => {
     offer.classList.remove('scrolled-offer');
     });
-    signUp.classList.remove('scrolled-sign-up-hosting');
+    signUpElement.classList.remove('scrolled-sign-up-hosting');
     header.classList.add('header-hosting-trans');
   }
 });
@@ -35,14 +36,10 @@ const buttonOffers = document.querySelectorAll('.offer');
 buttonOffers.forEach(buttonOffer => {
   buttonOffer.addEventListener('click', () => {
     const dataName = buttonOffer.dataset.nameOffer;
+    
     renderHero(dataName, dataName);
 
-    buttonOffers.forEach(buttons => {
-      hostingData.forEach(data => {
-          const dataName = Object.keys(data)[0];
-          buttons.classList.remove(data[dataName].color);
-      })
-    })
+    loopButtonsDelete(hostingData, buttonOffers);
 
     hostingData.forEach(data => {
       if(Object.keys(data)[0] === dataName) {
@@ -67,9 +64,9 @@ function renderHero(typePicture, dataName) {
         </div>
         <img class="pool-hosting-picture" src="${hosting[host].img}">`;
     }
-  })
-  
+    
   frontPage.innerHTML = heroHTML;
+  })
 
   hostingData.forEach(data => {
     if(Object.keys(data)[0] === dataName) {
@@ -77,5 +74,25 @@ function renderHero(typePicture, dataName) {
     getStarted.style.backgroundColor = `${data[dataName].colorElements}`;
     }
   })
-  
 }
+
+function loopButtonsDelete (hostingData, buttonOffers) {
+  buttonOffers.forEach(buttons => {
+      hostingData.forEach(data => {
+          const dataName = Object.keys(data)[0];
+          buttons.classList.remove(data[dataName].color);
+      })
+    })
+}
+
+//when clicked on frontpage.html
+const storedChoice = localStorage.getItem('choiceLink'); //pickleball
+console.log(storedChoice);
+
+goToHosting();
+
+function goToHosting () {
+  renderHero(storedChoice, storedChoice);
+  
+   loopButtonsDelete(hostingData, buttonOffers);
+  }

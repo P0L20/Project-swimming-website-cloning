@@ -50,7 +50,6 @@
 }
 .offer {
   color: white;
-  font-weight: 600;
   font-size: 17px;
   border: 1.6px solid white;
   background: transparent;
@@ -63,7 +62,6 @@
 }
 .scrolled-offer {
   color: #626A75;
-  font-weight: 600;
   font-size: 17px;
   border: 1.6px solid gray;
   background: transparent;
@@ -73,8 +71,13 @@
   border-radius: 100px;
 }
 .scrolled-sign-up-hosting {
-  border: 1px solid rgb(217, 217, 217);
+  border: 1px solid rgb(175, 175, 175);
   color: gray;
+}
+.pool-offer:hover {
+  border: 1.6px solid rgb(0, 178, 255);
+  background-color: rgb(0, 178, 255);
+  color: white;
 }
 .pickleball-offer:hover {
   background-color: #00538e;
@@ -92,8 +95,8 @@
   color: white;
 }
 .homes-offer:hover {
-  background-color: #002BFF;
-  border: 1px solid #002BFF;
+  background-color: rgb(0, 178, 255);
+  border: 1px solid rgb(0, 178, 255);
   color: white;
 }
 .image-wrapper {
@@ -124,7 +127,7 @@
   color: white;
 }
 .color-homes {
-  background-color: #002BFF;
-  border: 1px solid #002BFF;
+  background-color: rgb(0, 178, 255);
+  border: 1px solid rgb(0, 178, 255);
   color: white;
 }
