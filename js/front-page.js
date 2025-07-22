@@ -292,22 +292,28 @@ window.addEventListener('scroll', () => {
       </div>    
     `
   } 
+
 }
 
+getLinkInfo();
 reloadPage();
-
-getLinkInfo((choiceLink) => {
-  console.log(choiceLink);
-});
 
 export function getLinkInfo() {
   const links = document.querySelectorAll('.link-button');
   if (!links || links.length === 0) return;
+  console.log(links);
 
-  links.forEach(link => {
-    link.addEventListener('click', () => {
-      const choiceLink = link.dataset.linkChoice;
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+      const choiceLink = link.dataset.linkChoice;      // "pickleball"
+      const queryLink = link.dataset.query;            // "pickleball-offer"
+
       localStorage.setItem('choiceLink', choiceLink);
+      localStorage.setItem('querySelector', queryLink);
     });
+
   });
 }
+
+  const storedChoice = localStorage.getItem('choiceLink'); // e.g. "pickleball"
+  const query = localStorage.getItem('querySelector'); // e.g. "pickleball-offer"

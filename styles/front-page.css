@@ -622,6 +622,7 @@ button {
 }
 .hosting-container a {
   display: inline-block;
+  text-decoration: none;
 }
 .hosting-container div:nth-child(1) {
   width: 50%;

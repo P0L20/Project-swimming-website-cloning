@@ -87,12 +87,22 @@ function loopButtonsDelete (hostingData, buttonOffers) {
 
 //when clicked on frontpage.html
 const storedChoice = localStorage.getItem('choiceLink'); //pickleball
-console.log(storedChoice);
+const querySelector = localStorage.getItem('querySelector'); //pickleball-offer
 
 goToHosting();
 
 function goToHosting () {
   renderHero(storedChoice, storedChoice);
   
-   loopButtonsDelete(hostingData, buttonOffers);
-  }
+  loopButtonsDelete(hostingData, buttonOffers);
+
+  const button = document.querySelector(`.${querySelector}`);
+
+  hostingPic.forEach(data => {
+    const dataName = Object.keys(data)[0];
+
+    if(dataName === storedChoice) {
+      button.classList.add(data[dataName].color);
+    }
+  })
+}
