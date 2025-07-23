@@ -34,7 +34,7 @@ export const hostingPic = [{
   homes: {
   img: 'pictures/home-host.avif',
   color: 'color-homes',
-  colorElements: '#002BFF',
+  colorElements: 'rgb(0, 178, 255)',
   earnText: 'sharing your home with your neighbors.',
   lowerText: `Host intimate events sharing your home spaces when you aren't using them.`
   }
