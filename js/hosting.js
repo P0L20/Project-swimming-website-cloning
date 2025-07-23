@@ -38,6 +38,8 @@ buttonOffers.forEach(buttonOffer => {
     const dataName = buttonOffer.dataset.nameOffer;
     
     renderHero(dataName, dataName);
+    generateReviewHTML(dataName);
+    console.log(typeof dataName);
 
     loopButtonsDelete(hostingData, buttonOffers);
 
@@ -70,8 +72,7 @@ function renderHero(typePicture, dataName) {
 
   hostingData.forEach(data => {
     if(Object.keys(data)[0] === dataName) {
-    const getStarted = document.querySelector('.get-started');
-    getStarted.style.backgroundColor = `${data[dataName].colorElements}`;
+      document.documentElement.style.setProperty('--color-theme', `${data[dataName].colorElements}`);
     }
   })
 }
@@ -133,8 +134,11 @@ function generateInfoHTML () {
     .innerHTML = html;
 }
 
-function generateReviewHTML () {
+function generateReviewHTML (dataName) {
   let html = '';
+  let headHTML = `<p>Meet a few of our hosts</p>
+        <div class="container-card">
+        </div>`
 
   reviewContainer.forEach(review => {
     html += `<div class="card">
@@ -149,8 +153,15 @@ function generateReviewHTML () {
           </div>`
   });
 
+  if(dataName === 'pool') {
+  document.querySelector('.container-review-host')
+    .innerHTML = headHTML;
   document.querySelector('.container-card')
     .innerHTML = html;
+  } else {
+  document.querySelector('.container-review-host')
+    .innerHTML = '';
+  }
 }
 
 function generateGotHTML () {
