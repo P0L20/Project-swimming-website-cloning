@@ -301,7 +301,6 @@ reloadPage();
 export function getLinkInfo() {
   const links = document.querySelectorAll('.link-button');
   if (!links || links.length === 0) return;
-  console.log(links);
 
     links.forEach(link => {
       link.addEventListener('click', () => {
