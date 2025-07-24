@@ -144,6 +144,7 @@ body {
   margin-bottom: 50px;
 }
 .front-text {
+  position: relative;
   text-align: left;
   color: rgb(28, 32, 34);
   font-size: 38px;
@@ -416,22 +417,13 @@ body {
   box-sizing: border-box;
 }
 .learn-container img {
-  height: 100%;
-  width: 50%;
-  object-fit: cover;
   border-radius: 15px;
 }
 .engage-container {
+  margin: 50px 0;
   display: grid;
-  grid-template-columns: auto auto;
-  width: 100%;
-  margin: 50px auto;
-}
-.engage-container img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  filter: brightness(50%);
+  grid-template-columns: 1fr 1fr;
+  width: auto;
 }
 .left-section-engage {
   position: relative;
@@ -482,4 +474,17 @@ body {
   font-weight: 800;
   line-height: 120%;
   color: rgb(255, 255, 255);
+}
+.wave-design {
+  position: absolute;
+  left: 380px;
+  bottom: -15px;
+  color: var(--color-theme)
+}
+.left-picture-engage,
+.right-picture-engage {
+  filter: brightness(50%);
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
 }

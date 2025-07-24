@@ -39,7 +39,6 @@ buttonOffers.forEach(buttonOffer => {
     
     renderHero(dataName, dataName);
     generateReviewHTML(dataName);
-    console.log(typeof dataName);
 
     loopButtonsDelete(hostingData, buttonOffers);
 
@@ -48,6 +47,12 @@ buttonOffers.forEach(buttonOffer => {
         buttonOffer.classList.add(data[dataName].color);
       }
     });
+
+    if(dataName === 'pool') {
+      changeImageInEngage(dataName, 'tennis');
+    } else {
+      changeImageInEngage(dataName, 'pool');
+    }
   })
 });
 
@@ -187,4 +192,20 @@ function generateGotHTML () {
   document.querySelector('.container-card-back')
     .innerHTML = html;
 
+}
+
+//dataName //tennnis or pool
+function changeImageInEngage(leftSide, rightSide) {
+  const leftPicture = document.querySelector('.left-picture-engage');
+  const rightPicture = document.querySelector('.right-picture-engage');
+
+  hostingData.forEach(data => {
+    const key = Object.keys(data)[0];
+    if (key === leftSide) {
+      leftPicture.src = data[key].engageImg;
+    }
+    if (key === rightSide) {
+      rightPicture.src = data[key].engageImg;
+    }
+  });
 }

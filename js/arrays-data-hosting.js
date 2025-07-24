@@ -4,7 +4,8 @@ export const hostingPic = [{
   color: 'color-pool',
   colorElements: 'rgb(0, 178, 255)',
   earnText: 'hosting happiness in your community.',
-  lowerText: `Host joyful experiences sharing your pool when you aren't using it.`
+  lowerText: `Host joyful experiences sharing your pool when you aren't using it.`,
+  engageImg: 'pictures/swimming-pool-top-pic.jpg'
   }
 }, {
   pickleball: {
@@ -12,7 +13,8 @@ export const hostingPic = [{
   color: 'color-pickleball',
   colorElements: '#00538e',
   earnText: 'hosting Pickleball in your community.',
-  lowerText: `Share your court with local players when your aren't using it.`
+  lowerText: `Share your court with local players when your aren't using it.`,
+  engageImg: 'pictures/pickleball-engage.jpg'
   }
 }, {
   tennis: {
@@ -20,7 +22,8 @@ export const hostingPic = [{
   color: 'color-tennis',
   colorElements: '#00af54',
   earnText: 'hosting Tennis in your community.',
-  lowerText: `Share your court with local players when your aren't using it.`
+  lowerText: `Share your court with local players when your aren't using it.`,
+  engageImg: 'pictures/court-top.jpg'
   }
 }, {
   hoops: {
@@ -28,7 +31,8 @@ export const hostingPic = [{
   color: 'color-hoops',
   colorElements: '#f86848',
   earnText: 'hosting Hoops in your community.',
-  lowerText: `Share your court with local players when your aren't using it.`
+  lowerText: `Share your court with local players when your aren't using it.`,
+  engageImg: 'pictures/basketball-engage.jpg'
   }
 }, {
   homes: {
@@ -36,7 +40,8 @@ export const hostingPic = [{
   color: 'color-homes',
   colorElements: 'rgb(0, 178, 255)',
   earnText: 'sharing your home with your neighbors.',
-  lowerText: `Host intimate events sharing your home spaces when you aren't using them.`
+  lowerText: `Host intimate events sharing your home spaces when you aren't using them.`,
+  engageImg: 'pictures/homes-engage.jpg'
   }
 }]
 
